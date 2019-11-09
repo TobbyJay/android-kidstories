@@ -3,41 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="?colorSurface"
     android:layout_height="match_parent"
     tools:context=".About">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:background="?colorSurface"
-        android:elevation="4dp"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="32dp">
+        android:layout_height="match_parent">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center|fill"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/about_description"
-            android:padding="16dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            app:layout_constraintBottom_toTopOf="@+id/develop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="?colorSurface"
+            android:elevation="4dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
 
-        <TextView
-            android:id="@+id/develop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="@string/developers"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-            app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="340dp"
+                android:layout_height="205dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="15dp"
+                android:background="?colorSurface"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="@id/about_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/about_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:padding="30dp"
+                android:text="@string/about_description"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/develop"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logo"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/develop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="@string/developers"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/about_description"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
